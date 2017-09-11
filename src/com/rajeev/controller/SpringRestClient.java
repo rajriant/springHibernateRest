@@ -14,7 +14,7 @@ import com.rajeev.model.EleaveUserDetail;
 public class SpringRestClient {
 
 	private static RestTemplate restTemplate = new RestTemplate();
-	private static final String baseURL = "http://10.248.80.14/ELEAVEID2/eleave/";
+	private static final String baseURL = "urlhere";
 
 	// getuserdetail?userid=nchauhan
 
@@ -22,10 +22,9 @@ public class SpringRestClient {
 
 		// restTemplate.getForObject(url, responseType)
 		// ResponseEntity<String> response =
-		// restTemplate.getForEntity("http://10.248.80.14/ELEAVEID2/eleave/getuserdetail?userid=nchauhan",
 		// String.class);
 				
-		ResponseEntity<String> response = restTemplate.getForEntity(baseURL+ "getuserdetail?userid=nchauhan", String.class);
+		ResponseEntity<String> response = restTemplate.getForEntity(baseURL+ "", String.class);
 		
 		  if (HttpStatus.OK == response.getStatusCode()) {
 		        System.out.println(response);
@@ -35,15 +34,7 @@ public class SpringRestClient {
 			  System.out.println("some other problem");
 		  }
 		  	
-	//converting to json	
-		/*String soapmessageString = response.toString();
-		JSONObject soapDatainJsonObject = XML.toJSONObject(soapmessageString);
-		System.out.println(soapDatainJsonObject);*/
-		    
-	/*	EleaveUserDetail eleaveUserDetail = restTemplate.getForObject(baseURL+ "getuserdetail?userid=nchauhan", EleaveUserDetail.class,200);
-		System.out.println("AdminName: " + eleaveUserDetail.getAdminName());
-        System.out.println("AdminAssistant name: " + eleaveUserDetail.getAdminAsstName());*/
-      
+	
 	
 	}
 	
